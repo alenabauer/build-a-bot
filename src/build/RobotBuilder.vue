@@ -2,6 +2,11 @@
   <div>
     <div class="top-row">
       <div class="top part">
+        <div class="robot-name">
+          {{selectedRobot.head.title}}
+          <span v-if="selectedRobot.head.onSale" class="sale">Sale!</span>
+          <!-- <span v-show="selectedRobot.head.onSale" class="sale">Sale!</span> -->
+        </div>
         <!-- <img v-bind:src="parts.heads[selectedHeadIndex].src" title="head"/> -->
         <img :src="selectedRobot.head.src" title="head"/>
         <!-- <button v-on:click="selectPrevHead()" class="prev-selector">&#9668;</button> -->
@@ -195,5 +200,14 @@ export default {
 }
 .right .next-selector {
   right: -3px;
+}
+.robot-name {
+  position: absolute;
+  top: -25px;
+  text-align: center;
+  width: 100%;
+}
+.sale {
+  color: red;
 }
 </style>
